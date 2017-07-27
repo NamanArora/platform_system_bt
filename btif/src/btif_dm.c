@@ -1551,6 +1551,11 @@ static void btif_dm_search_devices_evt (UINT16 event, char *p_param)
 #if (defined(BLE_INCLUDED) && (BLE_INCLUDED == TRUE))
                 int addr_type = 0;
 
+                bt_bdname_t alias;
+                memset(&alias, 0, sizeof(alias));
+                BTIF_DM_GET_REMOTE_PROP(&bdaddr, BT_PROPERTY_REMOTE_FRIENDLY_NAME,
+                        &alias, sizeof(alias), properties[num_properties]);
+
                 memset(properties, 0, sizeof(properties));
                 /* BD_ADDR */
                 BTIF_STORAGE_FILL_PROPERTY(&properties[num_properties],
