@@ -790,7 +790,7 @@ void bta_dm_remove_device(tBTA_DM_MSG *p_data)
 #if (defined(BTA_GATT_INCLUDED) && BTA_GATT_INCLUDED)
     UINT8 other_transport = BT_TRANSPORT_INVALID;
 #endif
-    interop_database_remove_addr(INTEROP_DYNAMIC_ROLE_SWITCH, (bt_bdaddr_t *)&remote_bdaddr);
+    remove_iot_device(IOT_DEV_CONF_FILE, IOT_ROLE_CHANGE_BLACKLIST,p_dev->bd_addr, METHOD_BD);
 
     if (BTM_IsAclConnectionUp(p_dev->bd_addr, BT_TRANSPORT_LE) ||
         BTM_IsAclConnectionUp(p_dev->bd_addr, BT_TRANSPORT_BR_EDR))

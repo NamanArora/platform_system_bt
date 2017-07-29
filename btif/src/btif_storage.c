@@ -165,12 +165,8 @@ extern void btif_gatts_add_bonded_dev_from_nv(BD_ADDR bda);
 #if (BLE_INCLUDED == TRUE)
 static bt_status_t btif_in_fetch_bonded_ble_device(const char *remote_bd_addr,int add,
                                               btif_bonded_devices_t *p_bonded_devices);
-<<<<<<< HEAD
-static bt_status_t btif_in_fetch_bonded_device(const char *bdstr);
-=======
 #endif
-static bt_status_t btif_in_fetch_bonded_device(const char *bdstr, int *dev_type);
->>>>>>> 515f59bfb... BT: Fix up defines
+static bt_status_t btif_in_fetch_bonded_device(const char *bdstr);
 
 /************************************************************************************
 **  Static functions
